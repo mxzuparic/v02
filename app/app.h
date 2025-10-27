@@ -6,9 +6,23 @@
 
 namespace vsite::oop::v2
 {
-/*
-* class declaration
-*/
+	using COLORREF = std::uint32_t;
 
+	class color {
+		double r = 0, g = 0, b = 0;
+		double clamp(double x);
+	public:
+		color() = default;
+		color(const color&) = default;
+		color& operator=(const color&) = default;
+		void set_red(double);
+		void set_green(double);
+		void set_blue(double);
+		double get_red() const;
+		double get_green() const;
+		double get_blue() const;
+		COLORREF get_color_ref() const;
+		double get_luminance() const;
+	};
 
 }
