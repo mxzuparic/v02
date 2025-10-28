@@ -4,15 +4,9 @@
 namespace vsite::oop::v2
 {
 
-	double color::clamp(double x) {
-		if (x < 0) return 0;
-		if (x > 1) return 1;
-		return x;
-	}
-
-	void color::set_red(double x) { r = clamp(x); }
-	void color::set_green(double x) { g = clamp(x); }
-	void color::set_blue(double x) { b = clamp(x); }
+	void color::set_red(double x) { r = std::clamp(x, 0.0, 1.0); }
+	void color::set_green(double x) { g = std::clamp(x, 0.0, 1.0); }
+	void color::set_blue(double x) { b = std::clamp(x, 0.0, 1.0); }
 
 	double color::get_red() const { return r; }
 	double color::get_green() const { return g; }

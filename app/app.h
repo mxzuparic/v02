@@ -10,10 +10,9 @@ namespace vsite::oop::v2
 
 	class color {
 		double r = 0, g = 0, b = 0;
-		double clamp(double x);
 	public:
-		color() = default;
-		color(const color&) = default;
+		color() : r(0), g(0), b(0) {}
+		color(const color& other) : r(other.r), g(other.g), b(other.b) {}
 		color& operator=(const color&) = default;
 		void set_red(double);
 		void set_green(double);
